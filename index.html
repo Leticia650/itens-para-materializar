@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#33091b">
+  <title>Itens para materializar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lucide-static@0.468.0/font/Lucide.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="hero">
+      <div>
+        <span class="eyebrow"><i class="icon-sparkles"></i> minhas conquistas</span>
+        <h1>Itens para materializar</h1>
+        <p>Uma pequena lista para acompanhar, com calma, tudo aquilo que quero trazer para o meu espaço.</p>
+      </div>
+      <div class="progress-card">
+        <span>progresso</span>
+        <strong id="progressText">0%</strong>
+        <div class="progress"><div id="progressBar"></div></div>
+      </div>
+    </header>
+
+    <section class="add-card">
+      <form id="itemForm">
+        <div class="field item-field">
+          <label for="itemName">Nome do item</label>
+          <input id="itemName" type="text" placeholder="Ex.: suporte para monitor" required>
+        </div>
+        <div class="field price-field">
+          <label for="itemPrice">Valor</label>
+          <input id="itemPrice" type="number" min="0" step="0.01" placeholder="0,00" required>
+        </div>
+        <button class="add-btn" type="submit"><i class="icon-plus"></i> Adicionar</button>
+      </form>
+    </section>
+
+    <section class="summary">
+      <div><i class="icon-list"></i><span><b id="pendingCount">0</b> para comprar</span></div>
+      <div><i class="icon-circle-check"></i><span><b id="acquiredCount">0</b> adquiridos</span></div>
+      <div><i class="icon-wallet"></i><span>Total: <b id="totalValue">R$ 0,00</b></span></div>
+    </section>
+
+    <div id="emptyState" class="empty-state">
+      <i class="icon-box"></i>
+     
+      <p>Adicione o primeiro item que você quer materializar.</p>
+    </div>
+
+    <section class="items-section" id="pendingSection">
+      <div class="section-title">
+        <h2>Para materializar <span id="pendingBadge">0</span></h2>
+      </div>
+      <div id="pendingList" class="items-list"></div>
+    </section>
+
+    <section class="items-section acquired-section" id="acquiredSection">
+      <div class="section-title">
+        <h2>Já adquiridos <span id="acquiredBadge">0</span></h2>
+      </div>
+      <div id="acquiredList" class="items-list"></div>
+    </section>
+
+    <footer>
+      <span>salvo automaticamente no seu navegador</span>
+      <button id="clearBtn" class="clear-btn" type="button">Limpar tudo</button>
+    </footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
